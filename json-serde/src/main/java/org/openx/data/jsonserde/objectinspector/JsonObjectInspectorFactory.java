@@ -11,7 +11,11 @@
  *======================================================================*/
 package org.openx.data.jsonserde.objectinspector;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
@@ -24,6 +28,7 @@ import org.openx.data.jsonserde.objectinspector.primitive.JavaStringByteObjectIn
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringDoubleObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringFloatObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringIntObjectInspector;
+import org.openx.data.jsonserde.objectinspector.primitive.JavaStringJsonObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringLongObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringShortObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringTimestampObjectInspector;
@@ -201,6 +206,9 @@ public class JsonObjectInspectorFactory {
     static {
         primitiveOICache.put(PrimitiveCategory.BYTE, new JavaStringByteObjectInspector());
         primitiveOICache.put(PrimitiveCategory.SHORT, new JavaStringShortObjectInspector());
+        primitiveOICache.put(PrimitiveCategory.STRING, new JavaStringJsonObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.BYTE, new JavaStringByteObjectInspector());
+	    primitiveOICache.put(PrimitiveCategory.SHORT, new JavaStringShortObjectInspector());
         primitiveOICache.put(PrimitiveCategory.INT, new JavaStringIntObjectInspector());
         primitiveOICache.put(PrimitiveCategory.LONG, new JavaStringLongObjectInspector());
         primitiveOICache.put(PrimitiveCategory.FLOAT, new JavaStringFloatObjectInspector());
@@ -208,7 +216,7 @@ public class JsonObjectInspectorFactory {
         primitiveOICache.put(PrimitiveCategory.TIMESTAMP, new JavaStringTimestampObjectInspector());
         primitiveOICache.put(PrimitiveCategory.BOOLEAN, new JavaStringBooleanObjectInspector());
     }
-    
+
     /**
      * gets the appropriate adapter wrapper around the object inspector if
      * necessary, that is, if we're dealing with numbers. The JSON parser won't
@@ -219,7 +227,7 @@ public class JsonObjectInspectorFactory {
      */
     public static AbstractPrimitiveJavaObjectInspector getPrimitiveJavaObjectInspector(
             PrimitiveCategory primitiveCategory) {
-        
+
             if(! primitiveOICache.containsKey(primitiveCategory)) {
                 primitiveOICache.put(primitiveCategory, PrimitiveObjectInspectorFactory.
                     getPrimitiveJavaObjectInspector(primitiveCategory));
