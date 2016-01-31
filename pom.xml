@@ -95,6 +95,7 @@ add lines3
         <module>json-serde-cdh4-shim</module>
         <module>json-serde-cdh5-shim</module>
         <module>json-serde</module>
+        <module>json-udf</module>
     </modules>
 
 add middle line
