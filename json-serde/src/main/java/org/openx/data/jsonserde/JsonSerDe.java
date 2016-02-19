@@ -320,6 +320,8 @@ delete commits
                         break;
                     case UNKNOWN:
                         throw new RuntimeException("Unknown primitive");
+                    default:
+                        break;
                 }
                 break;
             case MAP:
@@ -333,6 +335,8 @@ delete commits
                 break;
             case UNION:
                 result = serializeUnion(obj, (UnionObjectInspector)oi);
+            default:
+                break;
         }
         return result;
     }
