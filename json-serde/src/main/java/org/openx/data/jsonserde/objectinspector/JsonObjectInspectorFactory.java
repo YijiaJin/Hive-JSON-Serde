@@ -32,10 +32,13 @@ add lines
  *
  * @author rcongiu
  */
-p
-ublic class JsonObjectInspectorFactory {
+public final class JsonObjectInspectorFactory {
 
     static HashMap<TypeInfo, ObjectInspector> cachedJsonObjectInspector = new HashMap<TypeInfo, ObjectInspector>();
+
+    private JsonObjectInspectorFactory() {
+        throw new InstantiationError("This class must not be instantiated.");
+    }
 
     /**
      *
