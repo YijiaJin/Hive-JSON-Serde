@@ -24,7 +24,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import org.apache.hadoop.hive.serde2.SerDe;
+
+import org.apache.hadoop.hive.serde2.AbstractSerDe;
 import org.apache.hadoop.hive.serde2.SerDeException;
 import org.apache.hadoop.hive.serde2.objectinspector.*;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
@@ -51,7 +52,7 @@ import org.openx.data.jsonserde.objectinspector.JsonStructOIOptions;
 
 import javax.print.attribute.standard.DateTimeAtCompleted;
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hive.serde.Constants;
+import org.apache.hadoop.hive.serde.serdeConstants;
 import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo;
 
 /**
@@ -61,7 +62,7 @@ import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo;
  * 
  * @author rcongiu
  */
-public class JsonSerDe implements SerDe {
+public class JsonSerDe extends AbstractSerDe {
 
     public static final Log LOG = LogFactory.getLog(JsonSerDe.class);
     List<String> columnNames;
@@ -95,8 +96,8 @@ public class JsonSerDe implements SerDe {
     public void initialize(Configuration conf, Properties tbl) throws SerDeException {
         LOG.debug("Initializing SerDe");
         // Get column names and sort order
-        String columnNameProperty = tbl.getProperty(Constants.LIST_COLUMNS);
-        String columnTypeProperty = tbl.getProperty(Constants.LIST_COLUMN_TYPES);
+        String columnNameProperty = tbl.getProperty(serdeConstants.LIST_COLUMNS);
+        String columnTypeProperty = tbl.getProperty(serdeConstants.LIST_COLUMN_TYPES);
         
         LOG.debug("columns " + columnNameProperty + " types " + columnTypeProperty);
 
@@ -131,7 +132,7 @@ b
 c
 
         // Get the sort order
-        String columnSortOrder = tbl.getProperty(Constants.SERIALIZATION_SORT_ORDER);
+        String columnSortOrder = tbl.getProperty(serdeConstants.SERIALIZATION_SORT_ORDER);
         columnSortOrderIsDesc = new boolean[columnNames.size()];
         for (int i = 0; i < columnSortOrderIsDesc.length; i++) {
             columnSortOrderIsDesc[i] = columnSortOrder != null && 
