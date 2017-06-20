@@ -53,6 +53,8 @@ add lines3
 	    <activation>
       		<activeByDefault>false</activeByDefault>
     	    </activation>
+add line
+add line
 	    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<serde.shim>json-serde-cdh4-shim</serde.shim>
@@ -217,6 +219,8 @@ add middle lines
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-compiler-plugin</artifactId>
 		<version>2.0.2</version>
+add line 
+add line 
 		<configuration>
 		    <source>1.6</source>
 		    <target>1.6</target>
