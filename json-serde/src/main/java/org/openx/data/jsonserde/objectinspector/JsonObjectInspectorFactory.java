@@ -28,6 +28,12 @@ import org.openx.data.jsonserde.objectinspector.primitive.JavaStringLongObjectIn
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringShortObjectInspector;
 import org.openx.data.jsonserde.objectinspector.primitive.JavaStringTimestampObjectInspector;
 
+
+
+add lines
+add lines
+add lines
+
 /**
  *
  * @author rcongiu
@@ -106,10 +112,7 @@ public class JsonObjectInspectorFactory {
         return result;
     }
 
-
-    static HashMap<ArrayList<Object>, JsonUnionObjectInspector> cachedJsonUnionObjectInspector
-            = new HashMap<ArrayList<Object>, JsonUnionObjectInspector>();
-
+delete lines
     public static JsonUnionObjectInspector getJsonUnionObjectInspector(
             List<ObjectInspector> ois,
             JsonStructOIOptions options) {
@@ -227,3 +230,5 @@ public class JsonObjectInspectorFactory {
 
 
 }
+
+add lines
