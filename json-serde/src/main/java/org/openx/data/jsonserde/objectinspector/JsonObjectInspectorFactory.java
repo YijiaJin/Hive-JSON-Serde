@@ -38,7 +38,8 @@ add lines
  *
  * @author rcongiu
  */
-public class JsonObjectInspectorFactory {
+p
+ublic class JsonObjectInspectorFactory {
 
     static HashMap<TypeInfo, ObjectInspector> cachedJsonObjectInspector = new HashMap<TypeInfo, ObjectInspector>();
 
