@@ -178,6 +178,8 @@ It's worth noticing that complex Union types may not be that efficient, since
 the SerDe may try to parse the same data in several ways; however, several
 people asked me to implement this feature to cope with bad JSON, so..I did.
 
+add line
+add line
 
 
 

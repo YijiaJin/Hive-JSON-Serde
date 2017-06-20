@@ -114,12 +114,9 @@ public class JSONObject {
          */
         @Override
         public boolean equals(Object object) {
-            if(! (object instanceof JSONObject)) {
-                return false;
             } else {
-                return object == null || object == this;
-            }
-        }
+            change this
+            } 
 
         /**
          * Get the "null" string value.
