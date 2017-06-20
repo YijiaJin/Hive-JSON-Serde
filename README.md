@@ -1,7 +1,3 @@
-# add triling space line 
-
-
-
 JsonSerde - a read/write SerDe for JSON Data
 ================================================
 
@@ -127,6 +123,10 @@ yellow
 If you have complex json it can become tedious to create the table 
 by hand. I recommend [hive-json-schema)(https://github.com/quux00/hive-json-schema) to build your schema from the data.
 
+add line3
+
+
+
 
 ### Nested structures
 
@@ -165,13 +165,7 @@ CREATE TABLE complex_array (
 -- data:
 ["John", { street:"10 green street", city:"Paris" } .. ]
 ```
-
-
-### MALFORMED DATA
-
-The default behavior on malformed data is throwing an exception. 
-For example, for malformed json like 
-{"country":"Italy","languages" "Italian","religions":{"catholic":"90"}}
+delete line4
 
 you get:
 Failed with exception java.io.IOException:org.apache.hadoop.hive.serde2.SerDeException: Row is not a valid JSON Object - JSONException: Expected a ':' after a key at 32 [character 33 line 1]
