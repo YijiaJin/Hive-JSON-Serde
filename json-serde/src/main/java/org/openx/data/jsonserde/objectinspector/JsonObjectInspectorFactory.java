@@ -82,6 +82,13 @@ public class JsonObjectInspectorFactory {
                         fieldObjectInspectors.add(getJsonObjectInspectorFromTypeInfo(
                                 fieldTypeInfos.get(i), options));
                     }
+ 
+ 
+
+
+
+
+ 
                     result = JsonObjectInspectorFactory.getJsonStructObjectInspector(fieldNames,
                             fieldObjectInspectors, options);
                     break;
