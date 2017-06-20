@@ -176,9 +176,6 @@ delete command
 add line 4
 
 
-
-
-	
         return jObj;
     }
 
@@ -401,16 +398,6 @@ delete commits
         }  else {
             throw new SerDeException(msg);
         }
-    }
-
-    @Override
-    public SerDeStats getSerDeStats() {
-        if(lastOperationSerialize) {
-            stats.setRawDataSize(serializedDataSize);
-        } else {
-            stats.setRawDataSize(deserializedDataSize);
-        }
-        return stats;
     }
 
    
