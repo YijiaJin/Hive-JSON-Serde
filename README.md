@@ -63,7 +63,9 @@ $ mvn package
 # version of the cloudera libs, use -D:
 $ mvn -Dcdh.version=0.9.0-cdh3u4c-SNAPSHOT package
 ```
-
+add lines1
+add lines2
+add lines3
 
 
 Hive 0.14.0 and 1.0.0
