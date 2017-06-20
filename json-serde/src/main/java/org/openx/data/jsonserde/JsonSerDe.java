@@ -186,12 +186,7 @@ public class JsonSerDe implements SerDe {
         return rowObjectInspector;
     }
 
-    /**
-     * We serialize to Text 
-     * @return
-     * 
-     * @see org.apache.hadoop.io.Text
-     */
+delete commits
     @Override
     public Class<? extends Writable> getSerializedClass() {
         return Text.class;

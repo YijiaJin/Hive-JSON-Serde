@@ -2,9 +2,6 @@
 
 
 
-
-
-
 JsonSerde - a read/write SerDe for JSON Data
 ================================================
 
