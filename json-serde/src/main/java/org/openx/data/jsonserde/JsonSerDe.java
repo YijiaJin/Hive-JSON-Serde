@@ -145,14 +145,8 @@ c
         
     }
 
-    /**
-     * Deserializes the object. Reads a Writable and uses JSONObject to
-     * parse its text
-     * 
-     * @param w the text to parse
-     * @return a JSONObject
-     * @throws SerDeException 
-     */
+delete command
+
     @Override
     public Object deserialize(Writable w) throws SerDeException {
         Text rowText = (Text) w;
